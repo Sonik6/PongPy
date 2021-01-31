@@ -1,3 +1,2 @@
-#Pong
-
-Simple pong game
+# PongPy
+pong game created from tutorial
