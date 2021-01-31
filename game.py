@@ -37,6 +37,10 @@ allSpritesList.add(ball)
 isRunning = True
 clock = pygame.time.Clock()
 
+#Initialise player scores
+scoreA = 0
+scoreB = 0
+
 # ---------- Main Loop ------------
 while isRunning:
     # --- Main event loop
@@ -62,8 +66,10 @@ while isRunning:
 
     #Bouncing ball
     if ball.rect.x>=710:
+        scoreA+=1
         ball.velocity[0] = -ball.velocity[0]
     if ball.rect.x<=0:
+        scoreB+=1
         ball.velocity[0] = -ball.velocity[0]
     if ball.rect.y>350:
         ball.velocity[1] = -ball.velocity[1]
@@ -81,11 +87,19 @@ while isRunning:
 
     allSpritesList.draw(screen) 
     
+
+     #Display scores:
+    font = pygame.font.Font(None, 74)
+    text = font.render(str(scoreA), 1, blue)
+    screen.blit(text, (250,10))
+    text = font.render(str(scoreB), 1, red)
+    screen.blit(text, (420,10))
+
     # --- Update
     pygame.display.flip()
 
     # --- Frame limit
     clock.tick(60)
 
-
+    
 pygame.quit
