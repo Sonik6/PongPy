@@ -18,9 +18,21 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.Surface([width, height])
         self.image.fill(black)
         self.image.set_colorkey(black)
- 
+
         # Draw the paddle (a rectangle!)
         pygame.draw.rect(self.image, color, [0, 0, width, height])
         
         # Fetch the rectangle object that has the dimensions of the image.
         self.rect = self.image.get_rect()
+
+    def moveUp(self, pixels):
+        self.rect.y -= pixels
+		#Check that you are not going too far (off the screen)
+        if self.rect.y < 0:
+          self.rect.y = 0
+          
+    def moveDown(self, pixels):
+        self.rect.y += pixels
+	#Check that you are not going too far (off the screen)
+        if self.rect.y > 260:
+          self.rect.y = 260

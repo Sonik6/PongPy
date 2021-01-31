@@ -42,7 +42,16 @@ while isRunning:
                 if event.key==pygame.K_x: #Pressing the x Key will quit the game
                      isRunning=False  
 
-
+    #Moving up and down
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_w]:
+        playerA.moveUp(5)
+    if keys[pygame.K_s]:
+        playerA.moveDown(5)
+    if keys[pygame.K_UP]:
+        playerB.moveUp(5)
+    if keys[pygame.K_DOWN]:
+        playerB.moveDown(5)    
     # --- Game logic
     allSpritesList.update()
 
