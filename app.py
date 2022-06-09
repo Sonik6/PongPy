@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, time
 from player import Player
 from ball import Ball
 pygame.init()
