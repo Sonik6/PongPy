@@ -17,3 +17,5 @@ Werkzeug==2.0.2
 
 # Required for deployment on Heroku
 gunicorn==20.1.0
+
+pygame==1.9.6
